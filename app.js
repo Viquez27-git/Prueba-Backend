@@ -1,27 +1,15 @@
-const express = require('express');
-const dotenv = require('dotenv').config(); // Para cargar variables de entorno
-const connectDB = require('./config/db'); // Importa la funci�n de conexi�n a DB
-
-// Conectar a la base de datos
-connectDB();
+import express from 'express';
 
 const app = express();
 
-// Middleware para parsear JSON en las solicitudes
-app.use(express.json());
-
-// Middleware para parsear datos de formularios (si los usaras)
-app.use(express.urlencoded({ extended: false }));
-
-// Ruta base
+// Ruta principal
 app.get('/', (req, res) => {
-    res.send('API RESTful con Node.js, Express y MongoDB');
+    res.send('Prueba de API version 2');
 });
 
-// Rutas de la API de Productos
-app.use('/api/productos', require('./routes/productos'));
+// Escuchar en el puerto 3000
+app.listen(3000, () => {
+    console.log('El servido esta listo http://localhost:3000');
+});
 
-// Puerto del servidor
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Servidor iniciado en el puerto ${PORT}`));
+export default app;
