@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv').config(); // Para cargar variables de entorno
-const connectDB = require('./config/db'); // Importa la función de conexión a DB
+const connectDB = require('./config/db'); // Importa la funciï¿½n de conexiï¿½n a DB
 
 // Conectar a la base de datos
 connectDB();
@@ -25,3 +25,5 @@ app.use('/api/productos', require('./routes/productos'));
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Servidor iniciado en el puerto ${PORT}`));
+
+// Prueba de branch!!
