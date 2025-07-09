@@ -25,5 +25,3 @@ app.use('/api/productos', require('./routes/productos'));
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Servidor iniciado en el puerto ${PORT}`));
-
-// Prueba de branch!!
